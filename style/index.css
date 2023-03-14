@@ -1,0 +1,26 @@
+body {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    text-align: center;
+}
+
+.table-bg {
+    background-color: dodgerblue;
+    border-radius: 0px;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    gap: .1%;
+    margin-top: 40px;
+}
+
+.add {
+    margin-right: 30%;
+}
+
+.select:focus {
+    border-color: dodgerblue;
+    outline: none;
+}
