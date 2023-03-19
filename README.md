@@ -2,9 +2,7 @@
 
 A registration form is an essential tool used by organizations to collect information from individuals. 
 
-The back-end was developed with PHP and MySQL. 
-
-On the front-end I used HTML and CSS and jQuery for the mask.
+Developed with PHP and MySQL. 
 
 <h3> index.php </h3>
 
