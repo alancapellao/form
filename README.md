@@ -1,6 +1,6 @@
 # Form
 
-Form was developed to record records, edit and query a table with all records made. All data is written to a local database.
+The form was a project developed to record records, edit and consult a table with all the records made. All data is written to a local database.
 
 Developed with PHP and MySQL.
 
