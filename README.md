@@ -1,8 +1,8 @@
 # Form
 
-A registration form is an essential tool used by organizations to collect information from individuals. 
+Form was developed to record records, edit and query a table with all records made. All data is written to a local database.
 
-Developed with PHP and MySQL. 
+Developed with PHP and MySQL.
 
 <h3> index.php </h3>
 
