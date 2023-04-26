@@ -1,7 +1,11 @@
 <?php
 
+require_once "config/connection.php";
+
 if (isset($_GET['delete'])) {
+
     $id = (int)$_GET['delete'];
-    $conn->exec("DELETE FROM users where id=$id");
+
+    $stmt = $conn->prepare("DELETE FROM usuarios WHERE id = ?");
+    $stmt->execute(array($id));
 }
-?>

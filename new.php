@@ -1,7 +1,3 @@
-<?php
-include("controller/insert.php")
-?>
-
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -16,7 +12,7 @@ include("controller/insert.php")
 <body>
 
     <div class="box">
-        <form action="new.php" method="post">
+        <form action="controller/insert.php" method="POST">
             <fieldset>
                 <legend><b>Adicionar Registro</b></legend>
                 <br>
@@ -65,14 +61,15 @@ include("controller/insert.php")
             </fieldset>
         </form>
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.13/jquery.mask.min.js"></script>
-
     <script>
         $(document).ready(function() {
             $('#telefone').mask('(00) 00000-0000');
         });
     </script>
+
 </body>
 
 </html>

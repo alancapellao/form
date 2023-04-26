@@ -1,24 +1,20 @@
 <?php
-include_once("model/connection.php");
 
-if (!empty($_GET['id'])) {
+require_once "../config/connection.php";
 
-    $id = $_GET['id'];
+if (isset($_POST['id']) && isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['telefone']) && isset($_POST['genero']) && isset($_POST['data_nascimento']) && isset($_POST['cidade']) && isset($_POST['estado'])) {
 
-    $sql = $conn->prepare("SELECT * FROM users WHERE id=$id");
+    $id = $_POST['id'];
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $telefone = $_POST['telefone'];
+    $genero = $_POST['genero'];
+    $nascimento = $_POST['data_nascimento'];
+    $cidade = $_POST['cidade'];
+    $estado = $_POST['estado'];
 
-    $sql->execute();
-
-    $fetchUsers = $sql->fetchAll();
-
-    foreach ($fetchUsers as $key => $value) {
-        $nome = $value['nome'];
-        $email = $value['email'];
-        $telefone = $value['telefone'];
-        $genero = $value['genero'];
-        $data_nasc = $value['nascimento'];
-        $cidade = $value['cidade'];
-        $estado = $value['estado'];
-    }
+    $stmt = $conn->prepare("UPDATE usuarios SET nome = ?, email = ?, telefone = ?, genero = ?, nascimento = ?, cidade = ?, estado = ? WHERE id = ?");
+    $stmt->execute(array($nome, $email, $telefone, $genero, $nascimento, $cidade, $estado, $id));
+    
+    header("location: ../index.php");
 }
-?>
