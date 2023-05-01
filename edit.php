@@ -1,5 +1,5 @@
 <?php
-include_once("controller/usuario.php");
+require_once "controller/usuario.php";
 ?>
 
 <!DOCTYPE html>

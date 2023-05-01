@@ -1,7 +1,7 @@
 <?php
-include_once("controller/select.php");
-include_once("controller/delete.php");
-include_once("controller/search.php");
+require_once "controller/select.php";
+require_once "controller/delete.php";
+require_once "controller/search.php";
 ?>
 
 <!DOCTYPE html>

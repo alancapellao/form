@@ -2,7 +2,7 @@
 
 require_once "config/connection.php";
 
-if (!empty($_GET['id'])) {
+if (isset($_GET['id'])) {
 
     $id = (int)$_GET['id'];
 
