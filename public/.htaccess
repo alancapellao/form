@@ -1,0 +1,13 @@
+RewriteEngine On
+RewriteBase /newForm/public/
+
+# Redireciona solicitações para o arquivo index.php, exceto se for um arquivo existente
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*)$ /index.php?uri=$1 [NC,L]
+
+# Bloquear acesso a arquivos específicos
+<Files ~ "^\.ht">
+    Order allow,deny
+    Deny from all
+</Files>
