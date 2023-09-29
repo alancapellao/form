@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use App\Models\Database;
@@ -39,8 +38,7 @@ class User
     public function createUser($userData) : bool
     {
         $column = implode(', ', array_keys($userData));
-        $bind = str_repeat('?', count($userData));
-        $bind = implode(', ', str_split($bind));
+        $bind = implode(', ', array_fill(0, count($userData), '?'));
 
         $stmt = $this->db->prepare("INSERT INTO usuarios ($column) VALUES ($bind)");
 
@@ -74,7 +72,7 @@ class User
         $stmt = $this->db->prepare("DELETE FROM usuarios WHERE id = :id");
         $stmt->bindValue(':id', $userId);
 
-        if (!$stmt->execute([$userId])) {
+        if (!$stmt->execute()) {
             return false;
         }
 

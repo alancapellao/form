@@ -12,7 +12,7 @@
 <body>
 
     <div class="box">
-        <form action="controller/update.php" method="POST">
+        <form action="#" id="formEdit" onsubmit="return false;">
             <fieldset>
                 <legend><b>Editar Registro</b></legend>
                 <br>
@@ -22,17 +22,17 @@
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="text" name="nome" id="nome" class="inputUser" value="<?= $user['nome'] ?>" required>
+                    <input type="text" name="nome" id="nome" class="inputUser" value="<?= htmlspecialchars($user['nome'], ENT_QUOTES) ?>" required>
                     <label for="nome" class="labelInput">Nome</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="text" name="email" id="email" class="inputUser" value="<?= $user['email'] ?>" required>
+                    <input type="text" name="email" id="email" class="inputUser" value="<?= htmlspecialchars($user['email'], ENT_QUOTES) ?>" required>
                     <label for="email" class="labelInput">Email</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="tel" name="telefone" id="telefone" class="inputUser" value="<?= $user['telefone'] ?>" .l required>
+                    <input type="tel" name="telefone" id="telefone" class="inputUser" value="<?= htmlspecialchars($user['telefone'], ENT_QUOTES) ?>" .l required>
                     <label for="telefone" class="labelInput">Telefone</label>
                 </div>
                 <br>
@@ -52,30 +52,24 @@
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="text" name="cidade" id="cidade" class="inputUser" value="<?= $user['cidade'] ?>" required>
+                    <input type="text" name="cidade" id="cidade" class="inputUser" value="<?= htmlspecialchars($user['cidade'], ENT_QUOTES) ?>" required>
                     <label for="cidade" class="labelInput">Cidade</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="text" name="estado" id="estado" class="inputUser" maxlength="2" value="<?= $user['estado'] ?>" required>
+                    <input type="text" name="estado" id="estado" class="inputUser" maxlength="2" value="<?= htmlspecialchars($user['estado'], ENT_QUOTES) ?>">
                     <label for="estado" class="labelInput">Estado</label>
                 </div>
                 <br><br>
                 <input type="hidden" name="id" value="<?= $user['id'] ?>">
-                <input type="submit" name="update" id="update" value="Atualizar">
-                <input type="button" name="cancel" id="cancel" value="Cancelar" onclick="window.location.href = '/'">
+                <input type="submit" value="Atualizar" onclick="editar()">
+                <input type="button" value="Cancelar" onclick="window.location.href = '/usuarios'">
             </fieldset>
         </form>
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.13/jquery.mask.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#telefone').mask('(00) 00000-0000');
-        });
-    </script>
-
+    <script src="/js/form.js"></script>
 </body>
 
 </html>

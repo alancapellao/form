@@ -12,7 +12,7 @@
 <body>
 
     <div class="box">
-        <form action="/usuarios/criar" method="POST">
+        <form action="#" id="formSave" onsubmit="return false">
             <fieldset>
                 <legend><b>Adicionar Registro</b></legend>
                 <br>
@@ -56,20 +56,14 @@
                     <label for="estado" class="labelInput">Estado</label>
                 </div>
                 <br><br>
-                <input type="submit" name="submit" id="submit" value="Salvar">
-                <input type="button" name="cancel" id="cancel" value="Cancelar" onclick="window.location.href = 'index.php'">
+                <input type="submit" value="Salvar" onclick="salvar()">
+                <input type="button" value="Cancelar" onclick="window.location.href = '/usuarios'">
             </fieldset>
         </form>
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.13/jquery.mask.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#telefone').mask('(00) 00000-0000');
-        });
-    </script>
-
+    <script src="/js/form.js"></script>
 </body>
 
 </html>

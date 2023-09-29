@@ -1,17 +1,27 @@
 <?php
 
 use App\Controllers\UserController;
+use App\Models\Error;
 
-// Mapeamento de rotas
+$error = new Error();
+
 $routes = [
     'usuarios' => [
         'controller' => UserController::class,
         'methods' => [
-            'criar' => 'create',
+            'salvar' => 'save',
             'editar' => 'edit',
             'deletar' => 'delete',
+            'pesquisar' => 'search',
             'default' => 'index'
         ]
     ],
-    // Adicione outras rotas conforme necessário
+    'erro' => [
+        'controller' => Error::class,
+        'methods' => [
+            '404' => 'error404',
+            '500' => 'error500',
+            'default' => 'error404'
+        ]
+    ]
 ];
